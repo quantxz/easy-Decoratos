@@ -53,7 +53,7 @@ npm i starter-decorator
     //others Application configs;
   
     private routes() {
-        this.server.use(new Controller)
+        this.server.use(new Controller.index)
     }
   
   }
