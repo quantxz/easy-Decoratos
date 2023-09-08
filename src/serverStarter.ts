@@ -1,10 +1,10 @@
-import express from 'express';
-import { ExpressType, ServerPortType } from './type';
+import { ExpressType, ServerPortType } from './types/serverTypes';
 
 /**
  * 
  * @param Server - pass the app class
  * @param Port - pass on which port you want the server to run on
+ * @type ServerPortType — number or string
  * @returns 
  */
 
