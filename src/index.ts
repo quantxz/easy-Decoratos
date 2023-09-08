@@ -1,5 +1,5 @@
-import { Route } from "./Route";
-import { ServerStarter } from "./serverStarter";
+import { Route } from "./Functions/Route";
+import { ServerStarter } from "./Functions/serverStarter";
 
 export {
     Route,

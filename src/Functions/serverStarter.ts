@@ -1,4 +1,4 @@
-import { ExpressType, ServerPortType } from './types/serverTypes';
+import { ExpressType, ServerPortType } from '../types/serverTypes';
 
 /**
  * 
