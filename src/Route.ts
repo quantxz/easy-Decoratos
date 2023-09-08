@@ -1,5 +1,11 @@
 import { Router } from "express";
 
+/**
+ * 
+ * @param method - HTTP method  
+ * @returns 
+ */
+
 export const Route = (path: string, method: string): any => {
   return (descriptor: PropertyDescriptor) => {
     const router: Router & any = Router();
