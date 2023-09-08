@@ -10,4 +10,4 @@ const ServerStarter = (Server, Port) => {
     };
 };
 exports.ServerStarter = ServerStarter;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=serverStarter.js.map
