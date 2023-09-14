@@ -21,6 +21,9 @@ export const Route = (path: string, method: string, middlaware?: (...params: Exc
       router[method.toLowerCase()](path, middlaware,  async (req: any, res: any, next: any) => {
         try {
           await originalMethod.call(req, res, next);
+
+          /* como o original method não esta passando qual a instancia (Por exemplo Controller.index) o codigo é preciso passar no metodo */
+          //arrumar isso 
         } catch (error) {
           next(error);
         }
