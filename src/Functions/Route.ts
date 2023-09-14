@@ -22,8 +22,9 @@ export const Route = (path: string, method: string, middlaware?: (...params: Exc
         try {
           await originalMethod.call(req, res, next);
 
-          /* como o original method não esta passando qual a instancia (Por exemplo Controller.index) o codigo é preciso passar no metodo */
-          //arrumar isso 
+          /* como o original method não esta passando qual a instancia (Por exemplo Controller.index) o codigo é preciso passar no metodo; 
+          na real isso esta passando agora eu tenho que criar uma route para colocar no App principal para que ele indetifique o metodo;
+          um dos dois*/ 
         } catch (error) {
           next(error);
         }
