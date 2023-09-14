@@ -4,16 +4,18 @@ import 'reflect-metadata';
 /**
  * 
  * @param method - HTTP method
- * @param middlaware - optional middlaware like a AuthMiddlaware 
+ * @param middlaware - optional middlaware like a AuthMiddlaware (Function)
  * @returns 
  */
 
-export const Route = (path: string, method: string, middlaware?: any): any => {
+export const Route = (path: string, method: string, middlaware?: () => {}): MethodDecorator => {
   return (descriptor: PropertyDescriptor) => {
-    const router: Router & any = Router();
+    //criando uma route Padrão
+    const router: Router = Router();
 
+    //guardando o metodo original e suas funções
     const originalMethod = descriptor.value;
-
+    //checkando se foi passado um middlaware
     if (middlaware) {
       router[method.toLowerCase()](path, middlaware,  async (req: any, res: any, next: any) => {
         try {

@@ -8,9 +8,11 @@ import { ExpressType, ServerPortType } from '../types/serverTypes';
  * @returns 
  */
 
-export const ServerStarter = (Server: ExpressType, Port: ServerPortType): any => {
+export const ServerStarter = (Server: ExpressType, Port: ServerPortType): ClassDecorator => {
     return (): any => {
+        //Criando uma nova instancia do server
         const appInstance: ExpressType = new Server().server;
+        //executando o server
         appInstance.listen(Port, () => {
             console.log(`server running in the port ${Port}`)
         })
