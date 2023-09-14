@@ -1,14 +1,15 @@
 import { Router } from "express";
 import 'reflect-metadata';
+import { excludeTypes } from "src/types/serverTypes";
 
 /**
  * 
  * @param method - HTTP method
- * @param middlaware - optional middlaware like a AuthMiddlaware (Function)
+ * @param middlaware - optional middlaware like a AuthMiddlaware (type Function)
  * @returns 
  */
 
-export const Route = (path: string, method: string, middlaware?: () => {}): MethodDecorator => {
+export const Route = (path: string, method: string, middlaware?: (...params: Exclude<any, excludeTypes>) /* testar se tipagem esta dando certo */ => {}): MethodDecorator => {
   return (descriptor: PropertyDescriptor) => {
     //criando uma route Padrão
     const router: Router = Router();
