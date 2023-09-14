@@ -5,7 +5,7 @@ import { excludeTypes } from "src/types/serverTypes";
 /**
  * 
  * @param method - HTTP method
- * @param middlaware - optional middlaware like a AuthMiddlaware (type Function)
+ * @param middlaware - optional middlaware like a AuthMiddlaware (type: Function (execept for undefined and null))
  * @returns 
  */
 
